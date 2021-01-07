@@ -8,3 +8,4 @@ class Testa:
 
 
     print(123)
+    print(123)
