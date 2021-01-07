@@ -30,3 +30,5 @@ class App(BasePage):
 
     def main(self) -> MainPage:
         return MainPage(self._driver)
+
+

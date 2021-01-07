@@ -5,3 +5,6 @@ class Testa:
     def test_aaa(bbb):
         t = Testa
         t.aaaa()
+
+
+    print(123)
