@@ -9,4 +9,6 @@ class Testa:
 
     print(123)
     print(123)
-    print(123321123321)
+    print(123)
+    print(123)
+    print(3333333333333)
