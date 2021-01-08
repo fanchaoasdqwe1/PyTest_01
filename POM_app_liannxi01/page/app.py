@@ -1,5 +1,8 @@
+import datetime
+
 from appium import webdriver
-from selenium.webdriver.remote.webdriver import WebDriver
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 from POM_app_liannxi01.page.base_page import BasePage
 from POM_app_liannxi01.page.main_page import MainPage
@@ -29,6 +32,15 @@ class App(BasePage):
         return self
 
     def main(self) -> MainPage:
+        def wait_load(driver):
+            print(datetime.datetime.now())
+            source = self._driver.page_source
+            if "我的" in source:
+                return True
+            if "同意" in source:
+                return True
+            return False
+        WebDriverWait(self._driver, 30).until(wait_load)
         return MainPage(self._driver)
 
 

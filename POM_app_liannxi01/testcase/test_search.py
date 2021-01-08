@@ -21,3 +21,6 @@ class TestSearch:
         print(1)
         self.mainpage.goto_search_page().search(text)
 
+    def test_select(self):
+        assert "已添加" in self.mainpage.goto_search_page().search('阿里巴巴').add_select()
+
