@@ -21,6 +21,7 @@ class TestSearch:
         print(1)
         self.mainpage.goto_search_page().search(text)
 
+    # 测试搜索-添加自选-判断是否添加
     def test_select(self):
-        assert "已添加" in self.mainpage.goto_search_page().search('阿里巴巴').add_select()
+        assert "已添加" in self.mainpage.goto_search_page().search('阿里巴巴').add_select().get_msg()
 

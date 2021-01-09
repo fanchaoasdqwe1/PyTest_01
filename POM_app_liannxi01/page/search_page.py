@@ -21,6 +21,13 @@ class SearchPage(BasePage):
 
     def add_select(self):
         element = self.find_by_text("加自选")
-        time.sleep(3)
         element.click()
-        return element.text
+        print(1)
+        return self
+
+    def get_msg(self):
+        print(3)
+        time.sleep(3)
+        element = self.find_and_get_text(MobileBy.ID, 'followed_btn')
+        print(element)
+        return element
