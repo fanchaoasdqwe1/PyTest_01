@@ -1,7 +1,7 @@
 - by: id
   locator: search_input_text
 - action: send
-  # yaml文件动态化
+#yaml文件注释
   value: "{key}"
 - by: id
   locator: name
