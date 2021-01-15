@@ -1,4 +1,5 @@
 import pytest
+import yaml
 
 from POM_app_liannxi01.page.app import App
 
@@ -13,11 +14,16 @@ class TestSearch:
 
     @pytest.mark.parametrize('text', (
         '华为',
-        '百度',
-        '腾讯',
-        '白酒'
+        '百度'
     ))
+    # 参数化
     def test_searches(self, text):
+        print(1)
+        self.mainpage.goto_search_page().search(text)
+
+    @pytest.mark.parametrize('text', yaml.safe_load(open(r"D:\Fc_xiangmu\PyTest_01\POM_app_liannxi01\files\data.yaml")))
+    # 数据驱动
+    def test_searches02(self, text):
         print(1)
         self.mainpage.goto_search_page().search(text)
 

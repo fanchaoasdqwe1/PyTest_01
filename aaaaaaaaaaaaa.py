@@ -1,1 +1,1 @@
-print("111" + '--' + "element.text")
+print('send' in ["send", "input"])

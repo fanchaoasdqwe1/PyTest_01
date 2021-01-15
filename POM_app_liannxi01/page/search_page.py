@@ -6,13 +6,18 @@ from POM_app_liannxi01.page.base_page import BasePage
 
 
 class SearchPage(BasePage):
-    def search(self, search_text='123'):
-        self.find(MobileBy.ID, 'search_input_text').send_keys(search_text)
-        time.sleep(2)
-        self.find(MobileBy.ID, 'search_input_text').click()  # 解决输入搜索内容后有时不会自动获取联想内容的情况
-        self.find(MobileBy.ID, 'name').click()
+    def search(self, search_text):
+        # 普通po封装
+        # self.find(MobileBy.ID, 'search_input_text').send_keys(search_text)
+        # time.sleep(2)
+        # self.find(MobileBy.ID, 'search_input_text').click()  # 解决输入搜索内容后有时不会自动获取联想内容的情况
+        # self.find(MobileBy.ID, 'name').click()
 
         # self.find(MobileBy.XPATH, '//*[contains(@text,"取消")]').click()
+        # 数据驱动方式的写法
+        self._params = {}
+        self._params["key"] = search_text
+        self.steps("../files/search.yaml")
         return self
 
         # todo 代表传参为str类型，返回值为float类型

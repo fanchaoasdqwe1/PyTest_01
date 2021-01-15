@@ -8,7 +8,10 @@ from POM_app_liannxi01.page.search_page import SearchPage
 
 class MainPage(BasePage):
     def goto_search_page(self):
-        self.find(MobileBy.ID, 'home_search').click()
+        # 普通po封装
+        # self.find(MobileBy.ID, 'home_search').click()
+        # 数据驱动方式的写法
+        self.steps("../files/steps.yaml")
         return SearchPage(self._driver)
 
     def goto_profile(self):
