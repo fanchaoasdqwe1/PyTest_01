@@ -18,10 +18,10 @@ class BasePage:
     _error_max = 10
     _error_count = 0
 
-    # yaml文件动态化创建空字典
+    # yaml创建空字典，用来存yaml文件中的动态变量
     _params = {}
 
-
+    # 构造方法，传参，避免反复重建driver
     def __init__(self, driver: WebDriver = None):
         self._driver = driver
 
@@ -31,6 +31,7 @@ class BasePage:
 
         try:
             # 寻找控件
+            # 三步表达式，如果if后面的条件成立就执行if前面的代码，否则执行else后面的代码
             element = self._driver.find_element(*locator) if isinstance(locator, tuple) else self._driver.find_element(locator, value)
             # # 如果是一个元组   上面是这些代码的简写
             # if isinstance(locator, tuple):
@@ -70,6 +71,7 @@ class BasePage:
         logging.info(value)
         try:
             # 寻找控件
+            # 三步表达式，如果if后面的条件成立就执行if前面的代码，否则执行else后面的代码
             element = self._driver.find_element(*locator) if isinstance(locator, tuple) else self._driver.find_element(locator, value)
             # # 如果是一个元组   上面是这些代码的简写
             # if isinstance(locator, tuple):
@@ -101,7 +103,7 @@ class BasePage:
 
     # 数据驱动的方法
     def steps(self, path):
-        with open(path) as f:
+        with open(path, encoding="utf-8") as f:
             steps: list[dict] = yaml.safe_load(f)
             element: WebElement = None
             for step in steps:

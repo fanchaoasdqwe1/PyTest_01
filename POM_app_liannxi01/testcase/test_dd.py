@@ -9,4 +9,4 @@ class TestDD:
         base.steps(r"D:\Fc_xiangmu\PyTest_01\POM_app_liannxi01\files\steps.yaml")
 
     def test_search(self):
-        App().start().main().goto_search_page().search_shujvqudong("tengxun")
+        App().start().main().goto_search_page().search_shujvqudong("哔哩哔哩")

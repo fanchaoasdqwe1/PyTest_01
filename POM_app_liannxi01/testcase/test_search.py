@@ -21,12 +21,12 @@ class TestSearch:
         print(1)
         self.mainpage.goto_search_page().search(text)
 
-    @pytest.mark.parametrize('text', yaml.safe_load(open(r"D:\Fc_xiangmu\PyTest_01\POM_app_liannxi01\files\data.yaml")))
+    @pytest.mark.parametrize('text', yaml.safe_load(open(r"D:\Fc_xiangmu\PyTest_01\POM_app_liannxi01\files\data.yaml", encoding="utf-8")))
     # 数据驱动认知开始的阶段
     def test_searches02(self, text):
         print(1)
         print(text)
-        self.mainpage.goto_search_page().search_shujvqudong(text)
+        self.mainpage.goto_search_page().search(text)
 
     # 测试搜索-添加自选-判断是否添加
     def test_select(self):
