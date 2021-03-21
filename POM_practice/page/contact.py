@@ -10,7 +10,7 @@ class Contact(BasePage):
         name_locator = (By.NAME, 'username')
         acctid_locator = (By.NAME, 'acctid')
         # .ww_radio+span:contains("女")
-        gender_locator = (By.CSS_SELECTOR, '.member_edit_formWrap>div:nth-child(1) .member_edit_item_Radios label:nth-child(2)')
+        gender_locator = (By.CSS_SELECTOR, '.member_edit_formWrap>div:nth-child(test_qiyeweixin) .member_edit_item_Radios label:nth-child(2)')
         mobile_locator = (By.NAME, 'mobile')
         self.find(name_locator).send_keys('1qwe')
         self.find(acctid_locator).send_keys('1qwe')

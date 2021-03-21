@@ -79,9 +79,9 @@ class TestXueQiu:
         self.driver.find_element(MobileBy.ID, 'search_input_text').send_keys('阿里巴巴')
         self.driver.find_element(MobileBy.ID, 'search_input_text').click()
         WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((MobileBy.XPATH,
-                                                                         '//*[contains(@resource-id,"listview")]/android.widget.RelativeLayout[1]')))
+                                                                         '//*[contains(@resource-id,"listview")]/android.widget.RelativeLayout[test_qiyeweixin]')))
         self.driver.find_element(MobileBy.XPATH,
-                                 '//*[contains(@resource-id,"listview")]/android.widget.RelativeLayout[1]').click()
+                                 '//*[contains(@resource-id,"listview")]/android.widget.RelativeLayout[test_qiyeweixin]').click()
         self.driver.find_element(MobileBy.XPATH,
                                  '//android.widget.TextView[@text="股票"]').click()
         button01 = self.driver.find_element(MobileBy.XPATH,
@@ -96,7 +96,7 @@ class TestXueQiu:
             self.driver.find_element(MobileBy.ID, 'search_input_text').send_keys('阿里巴巴')
             self.driver.find_element(MobileBy.ID, 'search_input_text').click()
             self.driver.find_element(MobileBy.XPATH,
-                                     '//*[contains(@resource-id,"listview")]/android.widget.RelativeLayout[1]').click()
+                                     '//*[contains(@resource-id,"listview")]/android.widget.RelativeLayout[test_qiyeweixin]').click()
             self.driver.find_element(MobileBy.XPATH,
                                      '//android.widget.TextView[@text="股票"]').click()
             button02 = self.driver.find_element(MobileBy.XPATH,
@@ -112,7 +112,7 @@ class TestXueQiu:
     def test_webview(self):
         self.driver.find_element(MobileBy.XPATH, '//*[@text="交易"]').click()
         self.driver.find_element(MobileBy.XPATH, '//*[@text="A股开户"]').click()
-        phone = (MobileBy.XPATH, "//*[@text='获取验证码']/../android.view.View[1]/android.widget.EditText")
+        phone = (MobileBy.XPATH, "//*[@text='获取验证码']/../android.view.View[test_qiyeweixin]/android.widget.EditText")
         WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(phone))
         self.driver.find_element(*phone).click()
         self.driver.find_element(*phone).send_keys("17600621582")

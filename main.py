@@ -14,9 +14,9 @@ driver.maximize_window()
 # 隐式等待
 driver.implicitly_wait(5)
 
-# list01 = _driver.find_elements_by_css_selector('#hotsearch-content-wrapper li a span:nth-child(1)')
-# a = 1
-# while a == 1:
+# list01 = _driver.find_elements_by_css_selector('#hotsearch-content-wrapper li a span:nth-child(test_qiyeweixin)')
+# a = test_qiyeweixin
+# while a == test_qiyeweixin:
 #     for i in list01:
 #         if i.text == '20':
 #             i.click()

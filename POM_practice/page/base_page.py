@@ -14,7 +14,7 @@ class BasePage:
             if reuse:
                 # 命令行需要输入的语句，端口号可以随便写，但是不能被使用：chrome --remote-debugging-port=9222
                 chrome_options = webdriver.ChromeOptions()
-                chrome_options.debugger_address = '127.0.0.1:9222'
+                chrome_options.debugger_address = '127.0.0.test_qiyeweixin:9222'
                 self._driver = webdriver.Chrome(options=chrome_options)
             else:
                 self._driver = webdriver.Chrome()

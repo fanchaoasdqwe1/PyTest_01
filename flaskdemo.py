@@ -11,7 +11,7 @@ app = Flask(__name__)
 request: Request
 app.secret_key = "key"
 
-@app.route("/request", methods= ['POST', 'GET'])
+@app.route("/request", methods=['POST', 'GET'])
 def hello():
     # query接参数
     query = request.args

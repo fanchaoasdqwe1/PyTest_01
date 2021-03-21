@@ -33,7 +33,7 @@ class Testbrowser:
         print(zhuye)
         # 使用By方法需要导包
         self.driver.find_element(By.CSS_SELECTOR, '#btnlogin').click()
-        # 切换至iframe框，三种写法，可转到方法实现查看。1.name属性    2.下标    3.属性名定位
+        # 切换至iframe框，三种写法，可转到方法实现查看。test_qiyeweixin.name属性    2.下标    3.属性名定位
         self.driver.switch_to.frame('layui-layer-iframe1')
         self.driver.find_element_by_css_selector('#PassportName').send_keys('17600621582')
         self.driver.find_element_by_css_selector('#Password').send_keys('Uu222222')
@@ -59,7 +59,7 @@ class Testbrowser:
 
     def test_demo02(self):
         self.driver.get('https://www.baidu.com/')
-        list02 = self.driver.find_elements_by_css_selector('#hotsearch-content-wrapper li a span:nth-child(1)')
+        list02 = self.driver.find_elements_by_css_selector('#hotsearch-content-wrapper li a span:nth-child(test_qiyeweixin)')
         a = 1
         while a == 1:
             for i in list02:
@@ -80,6 +80,6 @@ class Testbrowser:
         self.driver.find_element_by_css_selector('#s-top-more [name="tj_mp3"]').click()
         # TODO 当新开页面后，要想操作新页面，必须必须必须切换窗口！！！！！！！
         self.driver.switch_to.window(self.driver.window_handles[1])
-        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, '.tracklist-box.clearfix div:nth-child(1)')))
-        self.driver.find_element(By.CSS_SELECTOR, '.tracklist-box.clearfix div:nth-child(1)').click()
+        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, '.tracklist-box.clearfix div:nth-child(test_qiyeweixin)')))
+        self.driver.find_element(By.CSS_SELECTOR, '.tracklist-box.clearfix div:nth-child(test_qiyeweixin)').click()
 

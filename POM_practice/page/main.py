@@ -34,8 +34,8 @@ class Main(BasePage):
         return ['aaa', 'bbbb']
 
     def add_member(self):
-        # WebDriverWait(self._driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, '.index_service_cnt.js_service_list a:nth-child(1)')))
-        self.find((By.CSS_SELECTOR, '.index_service_cnt.js_service_list a:nth-child(1)')).click()
+        # WebDriverWait(self._driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, '.index_service_cnt.js_service_list a:nth-child(test_qiyeweixin)')))
+        self.find((By.CSS_SELECTOR, '.index_service_cnt.js_service_list a:nth-child(test_qiyeweixin)')).click()
         return Contact(self._driver)
 
     # 主页-前往管理-素材库

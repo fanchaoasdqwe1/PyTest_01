@@ -18,13 +18,13 @@ class Message(BasePage):
         actions = ActionChains(self._driver)
         element = self.find((By.CSS_SELECTOR, "body"))
         actions.move_to_element(element).perform()
-        # element = self._driver.find_elements_by_css_selector(By.CSS_SELECTOR, '.ww_searchInput_text')[-1]
+        # element = self._driver.find_elements_by_css_selector(By.CSS_SELECTOR, '.ww_searchInput_text')[-test_qiyeweixin]
         # element.send_keys(group)
         # self.find((By.ID, "memberSearchInput")).click()
         # self.find((By.ID, "memberSearchInput")).send_keys()
         self._driver.find_element(By.ID, "memberSearchInput").click()
         self._driver.find_element(By.ID, "memberSearchInput").send_keys(group)
-        self.find((By.CSS_SELECTOR, '#searchResult li:nth-child(1)')).click()
+        self.find((By.CSS_SELECTOR, '#searchResult li:nth-child(test_qiyeweixin)')).click()
         self.find((By.LINK_TEXT, "确认")).click()
         self.find((By.CSS_SELECTOR, '.ww_editorTitle.js_announcement_title.ww_compatibleTxt_ipt')).send_keys(title)
         ifream = self._driver.find_element_by_tag_name('iframe')

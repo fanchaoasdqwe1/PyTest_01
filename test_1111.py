@@ -22,7 +22,7 @@ class Test111():
     def test_111(self):
         self.driver.get("https://music.taihe.com/")
         self.driver.maximize_window()
-        ActionChains(self.driver).move_to_element(self.driver.find_element_by_css_selector('.tracklist-box.clearfix div:nth-child(1)')).perform()
+        ActionChains(self.driver).move_to_element(self.driver.find_element_by_css_selector('.tracklist-box.clearfix div:nth-child(test_qiyeweixin)')).perform()
         time.sleep(2)
-        self.driver.find_element(By.CSS_SELECTOR, ".tracklist-box.clearfix div:nth-child(1)").click()
+        self.driver.find_element(By.CSS_SELECTOR, ".tracklist-box.clearfix div:nth-child(test_qiyeweixin)").click()
         time.sleep(5)
