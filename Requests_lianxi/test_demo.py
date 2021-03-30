@@ -1,6 +1,9 @@
+import json
+
 import requests
 from pprint import pprint
 
+from jsonpath import jsonpath
 from requests import Session, Response
 
 proxies = {
@@ -76,3 +79,26 @@ def test_upload111():
     r = requests.get(
         "http://study-test.wendu.com/api/studyrecord/latestlessoninfobycappid?cappid=100016&ver=1.0&appid=100016&sign=a046cca1788d050dcdd8ad45c4467613&time=20210320225342&userid=2016761&platform=1")
     print(r.json())
+
+# jsonpath,用于在json中寻找元素，类似于xPath
+def test_jsonpath():
+    r = requests.get("https://ceshiren.com/categories.json")
+    # json代码布局美化版本   .两种写法。   indent=2表示缩进2
+    print(json.dumps(r.json(), indent=2, ensure_ascii=False))
+    print('----------------------------------------------------------------------------------------------')
+    print('----------------------------------------------------------------------------------------------')
+    print('----------------------------------------------------------------------------------------------')
+    print(json.dumps(json.loads(r.text), indent=2, ensure_ascii=False))
+
+    for item in r.json()['category_list']['categories']:
+        if item['name'] == '开源项目':
+            break
+    print(item)
+    print(item['description'])
+    # jsonpath需安装，需导包
+    print(jsonpath(r.json(), '$..name'))
+    print(jsonpath(r.json(), '$..categories[?(@.name=="开源项目")]')[0]['description'])
+    assert item['description'] == "开源项目交流与维护"
+
+
+

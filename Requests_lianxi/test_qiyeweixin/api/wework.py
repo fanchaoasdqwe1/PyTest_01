@@ -13,7 +13,7 @@ class WeWork(BaseApi):
     token_time = dict()
     secret = "Yk-zuf3-um8wJYr0V9CwhPSRdxbf6PzpY9-pfkBSWi8"
 
-    @classmethod
+    @classmethod  # 类方法，相当于省去实例化的步骤
     def get_token(cls, secret=secret):
         if secret is None:
             # 制度发生变化，在这个地方决定是否重新获取
