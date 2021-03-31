@@ -16,7 +16,6 @@ class GroupChat(WeWork):
                           params={"access_token": self.get_token(self.secret)},
                           json=json)
         self.format(r)
-        print(r.url)
         return r.json()
 
     def get(self, chat_id):

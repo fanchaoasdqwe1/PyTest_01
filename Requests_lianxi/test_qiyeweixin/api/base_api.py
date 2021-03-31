@@ -2,13 +2,20 @@ import json
 import logging
 
 import yaml
+from jsonpath import jsonpath
 from requests import Request
 
 
 class BaseApi:
+    # json代码布局美化版本   .两种写法。   indent=2表示缩进2
     @classmethod
     def format(cls, r):
-        print(json.dumps(r.json(), indent=2))
+        # print(json.dumps(r.json(), indent=2, ensure_ascii=False))
+        print(json.dumps(json.loads(r.text), indent=2, ensure_ascii=False))
+
+    # 封装jsonpath，可以避免频繁的导入它
+    def jsonpath(self, r, path):
+        return jsonpath(r, path)
 
     # 数据驱动的方法
     def steps(self, path):
